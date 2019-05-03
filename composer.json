@@ -1,0 +1,29 @@
+{
+  "name": "lukaschel/pimcore-recaptcha",
+  "description": "Pimcore bundle to use recaptcha v3 in symfony forms",
+  "type": "pimcore-bundle",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Lukaschel",
+      "email": "lukaschel33@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Lukaschel\\PimcoreRecaptchaBundle\\": ""
+    }
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "Lukaschel\\PimcoreRecaptchaBundle\\PimcoreRecaptchaBundle"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+      "composer/installers": "^1.1",
+      "lukaschel/pimcore-bundle-configuration": "~1.0"
+  }
+}

@@ -1,0 +1,11 @@
+<script src="https://www.google.com/recaptcha/api.js?render={{ recaptchaPublicKey }}"></script>
+
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('{{ recaptchaPublicKey }}', {action: 'homepage'}).then(function(token) {
+            [].forEach.call(document.getElementsByClassName('g-recaptcha-response-input'), function(element) {
+                element.value = token;
+            });
+        });
+    });
+</script>
