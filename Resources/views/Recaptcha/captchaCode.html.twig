@@ -1,11 +1,17 @@
 <script src="https://www.google.com/recaptcha/api.js?render={{ recaptchaPublicKey }}"></script>
 
 <script>
-    grecaptcha.ready(function() {
+    function grepcaptchaExecute() {
         grecaptcha.execute('{{ recaptchaPublicKey }}', {action: 'homepage'}).then(function(token) {
             [].forEach.call(document.getElementsByClassName('g-recaptcha-response-input'), function(element) {
                 element.value = token;
             });
         });
+    }
+    grecaptcha.ready(function() {
+        setInterval(function(){
+            grepcaptchaExecute();
+        }, 60000);
+        grepcaptchaExecute()
     });
 </script>
